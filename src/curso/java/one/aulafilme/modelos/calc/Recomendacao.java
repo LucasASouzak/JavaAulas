@@ -1,7 +1,5 @@
 package curso.java.one.aulafilme.modelos.calc;
 
-import curso.java.one.aulafilme.modelos.Movie;
-
 public class Recomendacao {
 
 

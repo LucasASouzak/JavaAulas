@@ -1,4 +1,4 @@
-package curso.java.one.aulafilme.modelos;
+package modelos;
 
 import curso.java.one.aulafilme.modelos.calc.Classificar;
 

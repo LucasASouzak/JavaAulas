@@ -1,7 +1,6 @@
 package curso.java.one.aulafilme.modelos.calc;
 
-import curso.java.one.aulafilme.modelos.Movie;
-import curso.java.one.aulafilme.modelos.Titulo;
+import modelos.Titulo;
 
 public class CalculadoraDeTempo {
     private int tempoTotal;

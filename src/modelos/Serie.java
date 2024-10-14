@@ -1,12 +1,20 @@
-package curso.java.one.aulafilme.modelos;
-
-import curso.java.one.aulafilme.modelos.calc.Classificar;
+package modelos;
 
 public class Serie extends Titulo{
     private int temporadas;
     private boolean ativa;
     private int espisodiosTemporada;
     private int minutosPorEpisodio;
+
+    public Serie(String nome, int anoLancamento) {
+        super(nome, anoLancamento);
+    }
+
+    @Override
+    public String toString(){
+        return "Serie: "  + this.getNome() + " ("+ this.getAnoLancamento() + ")";
+    }
+
 
     public int getTemporadas() {
         return temporadas;

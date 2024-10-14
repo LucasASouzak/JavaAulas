@@ -1,12 +1,17 @@
-package curso.java.one.aulafilme.modelos;
+package modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoLancamento;
     private boolean inclusoNoPlano;
     private double avaliacoes;
     private int totalAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoLancamento) {
+        this.nome = nome;
+        this.anoLancamento = anoLancamento;
+    }
 
     public String getNome() {
         return nome;
@@ -60,6 +65,11 @@ public class Titulo {
     }
     public double mediaAvalicoes(){
         return avaliacoes / totalAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo tituloComparado) {
+        return this.getNome().compareTo(tituloComparado.getNome());
     }
 }
 
