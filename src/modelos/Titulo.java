@@ -1,7 +1,11 @@
 package modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+
     private String nome;
+
     private int anoLancamento;
     private boolean inclusoNoPlano;
     private double avaliacoes;
@@ -12,6 +16,19 @@ public class Titulo implements Comparable<Titulo> {
         this.nome = nome;
         this.anoLancamento = anoLancamento;
     }
+
+    public Titulo(TituloOmdb meuTitulo) throws ErroDeFormatoAnoException {
+        this.nome = meuTitulo.title();
+
+        if (meuTitulo.year().length() > 4) {
+            throw new ErroDeFormatoAnoException("Ano em formato inválido, " +
+                    "contem mais que 4 digitos.");
+        }
+
+        this.anoLancamento = Integer.valueOf(meuTitulo.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTitulo.runtime().substring(0,2));
+    }
+
 
     public String getNome() {
         return nome;
@@ -70,6 +87,14 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo tituloComparado) {
         return this.getNome().compareTo(tituloComparado.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return "Titulo{" +
+                "Nome: '" + nome + '\'' +
+                ", Lançamento: " + anoLancamento + ", Duração: " + duracaoEmMinutos +
+                '}';
     }
 }
 
